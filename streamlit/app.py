@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 
+
 # Função para processar o valor
 def processar_valor(valor):
     headers = {
@@ -40,3 +41,4 @@ if st.button("Submeter"):
             st.error("Resposta inesperada da API.")
     else:
         st.error("Por favor, insira um valor antes de submeter.")
+
