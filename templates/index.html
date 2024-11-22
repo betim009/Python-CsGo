@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Inicial</title>
+
+    <!-- Referência correta ao CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+
+<body>
+    <header>
+        <h2>Página Inicial</h2>
+    </header>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Imagem</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for weapon in result %}
+            <tr>
+                <td>{{ weapon['name'] }}</td>
+                <td><img src="{{ weapon['img'] }}" alt=""></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+</body>
+
+</html>

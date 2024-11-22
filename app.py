@@ -1,9 +1,16 @@
-# imports
-from menu import menu
+from flask import Flask, render_template
+import pandas as pd
+
+file_weapons = pd.read_csv('./weapons.csv')
 
 
-def main():
-    menu()
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    weapons_list = file_weapons.to_dict(orient='records')
+    return render_template("./index.html", result=weapons_list)
 
 
-main()
+if __name__ == "__main__":
+    app.run(debug=True)
